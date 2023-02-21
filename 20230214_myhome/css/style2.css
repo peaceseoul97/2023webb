@@ -1,0 +1,175 @@
+@charset "utf-8";
+html,body{height: 100%;}
+
+/* 초기화 */
+
+*{margin: 0;padding: 0;box-sizing: border-box;}
+li{list-style: none;}
+a:link,a:visited{text-decoration: none; color: #888;}
+.clearfix::after{
+    content: ""; display: block; clear: both;
+}
+h3{font-size: 18px; letter-spacing: -1px;}
+/* p{font-size: 14px; letter-spacing: -1px;} */
+.container{width: 980px; margin: 0 auto;}
+
+/* 헤더 */
+.top{
+    border-bottom: 1px solid #dddddd; margin-bottom: 10px;
+}
+
+.submenu{
+    float: right; height: 26px;     
+    line-height: 26px;
+}
+
+.submenu li{
+    float: left; 
+}
+
+.submenu li a{
+    display: block;
+    font-size: 12px; 
+    padding: 0 10px;
+    position: relative;
+    /* 1번물음. display: block; 이거 왜 썼지?  - 마우스포인트 블럭전체에 주기위해 
+    2번물음. line-height: 26px; 이거 왜 썼지?  - 가운데정렬 하기 위해
+    3번물음. position: relative; 이거 왜 썼지  */
+}
+
+.submenu li a:after{
+    display: block; content: ""; height: 4px; width: 4px; background: #888;
+    position: absolute; left: -2px; top: 11px; border-radius: 50%;
+}
+/* 글자 사이에 선 만드는것 
+1. db, content, poa 왜?*/
+
+.submenu li:first-child a::after{
+    display: none;
+}
+/* 첫번째 글자의 선을 없애는것. 마지막일때 :last-child 이용할것 */
+
+
+/* 로고 */
+
+h1.logo{
+    width: 200px;height: 49px; margin: 0 auto; margin-bottom: 10px;
+}
+
+h1 img{display: block;}
+
+/* 바텀 */
+
+#hd .bottom{
+    background: #1C5DA3;
+}
+#hd .menu li{
+    float: left; width: calc( 100% / 6);
+    border-right: 1px solid #336eac;
+    /* 왼쪽정렬 하고 가로값을 6등분해서 나눔 */
+    /* 336eac 값은 li안의 a 들 사이의 선 색깔 */
+}
+
+#hd .menu li a :first-child{
+    border-left: 1px solid #336eac;
+}
+
+#hd .bottom li a{
+    display: block; height: 44px; font-size: 16px; color: white;
+    text-align: center; font-weight: bold; line-height: 44px; letter-spacing: -0.8px;
+}
+/* height:44px 값을 왜 줬나  - 가운데 정렬하기 위해서.*/
+
+/* 비쥬얼 */
+
+.visual{
+    background: #213969 no-repeat center url(../img/visual_bg.jpg);
+}
+/* 이미지 링크 연결하는거 헷갈림. */
+
+
+.vWrap{
+    position: relative; height: 400px; overflow: hidden;
+}
+
+.vWrap img{
+    position: absolute;
+}
+
+.vWrap .img1{
+    left: 0; top: 50%; margin-top: -123px;
+}
+/* top50%값을 왜 줬니? */
+
+.vWrap .img2{
+    right: 0; top: 20px;
+}
+
+/* 배너 */
+
+.bWrapper{
+    background: #eee; margin-bottom: 50px;
+}
+
+.bWrap li{
+    width: calc( 100% / 5 ); float: left; 
+    background: #fff; text-align: center;
+    padding: 20px 0;
+}
+
+.bWrap li img{
+    display: block; margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.bWrap li h3{
+    margin-bottom: 7px; color: white;
+}
+.bWrap li p{
+    color :white; margin: 10px;
+}
+
+.bWrap li:nth-child(1){background: #7C99B9}
+.bWrap li:nth-child(2){background: #4F74A1}
+.bWrap li:nth-child(3){background: #4B8CE0}
+.bWrap li:nth-child(4){background: #3DB5F3}
+.bWrap li:nth-child(5){background: #95C8FF}
+
+/* 잡 섹션 */
+
+.jobWrap{margin-bottom: 25px;}
+.jobWrap div.jobItem{
+    float: left; width: calc( (100% - 50px) / 3); margin-right: 25px;
+}
+.jobWrap div.jobItem:last-child{
+    margin-right: 0;
+}
+
+.jobWrap .img{display: block;}
+.jobWrap .tWrap{
+    padding: 20px 15px; 
+    border: 1px slid #dddddd;
+    border-top: 0 none;
+    position: relative;
+    overflow: hidden;
+}   
+
+.jobWrap h3{margin-bottom: 8px;}
+.jobWrap p{color:#888}
+
+.con li{
+    float: left;
+    width: calc( ( 100% - 50px ) / 3 );
+    margin-right: 25px;
+    border: 1px solid #dddddd; 
+    position: relative;
+    padding: 20px 15px;
+    overflow: hidden;
+}
+
+.con li:last-child{margin-right: 0;}
+.con li .tWrap{width: 200px; position: relative;}
+.con li .tWrap h3,
+.con li .tWrap p{margin-bottom: 10px; line-height: 21px;}
+.con li img{position: absolute; right: 0; right: -20px; top: 10px;}
+.con li a{color: #00f;}

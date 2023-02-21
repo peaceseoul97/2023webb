@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;  
+            background-color: #f00;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" onclick="location.href='location01.html'">
+
+    </div>
+    <div id="day">월요일</div>
+    <div id="day1">dnjf요일</div>
+    
+    
+
+    <script>
+        const week = new Date().getDay(); 
+
+        //const 1번, switch 2번, let day ="3번"
+
+        console.log(week) 
+        // 숫자 데이터를 출력하기 위함.
+
+        let day ="";
+
+        switch(week){
+            case 0:
+                day = "일"; 
+                break;
+            case 1:
+                day = "월"; 
+                break;
+            case 2:
+                day = "화"; 
+                break;
+            case 3:
+                day = "수"; 
+                break;
+            case 4:
+                day = "목"; 
+                break;
+        }
+
+        // 지역변수는 블록 안에서만 사용하는것.
+        // 전역 변수는 블록 내 외 모두 사용
+
+        // document.write("오늘은" + day + "요일 입니다.")
+        
+        document.getElementById("day").innerHTML = "오늘은" + day + "요일 입니다.";
+        // $("#day1").html("오늘 역시" + day + "요일 입니다.")
+        // 꼭 기억하기 ***
+
+        console.log(document.getElementById("day1").innerHTML)
+        // 꼭 기억하기 ***
+    </script>
+</body>
+</html>
