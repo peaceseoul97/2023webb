@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="menu">
+    
+3123122311
+
+
+
+    </div>
+
+    <script>
+        let arr = ["짜장면","짬뽕","볶음밥","탕수육","군만두"]
+        let alink = [
+            "링크값",
+            "링크값",
+            "링크값",
+            "링크값",
+            "링크값"
+        ]
+
+        console.log(arr[2])  
+        //숫자가 0~4 입력 시 바뀜. 왜냐하면 갯수가 다섯가지인데, 0부터 시작하기때문. 
+        console.log("배열개수" + arr.length);
+
+        let menu = ""; 
+        // 변수를 menu로 설정. "" 들어간것은, 빈칸에 변수가 마음대로 바뀌기 위함.
+
+        for(let i=0; i<arr.length; i++){
+            menu = menu + "<a href='" + alink[i] + "'>" + arr[i] + "</a><br>"
+        }
+        // 변수 i를 0으로 시작으로, i가 늘어나면 늘어날수록 더 늘어나기 위하여 arr.length를 이용. 
+        //(확장성) / i++은 i +1과 같은것. 1씩 늘어남
+
+        console.log(menu)
+
+        // document.getElementById("menu").innerHTML = menu;
+        // .innerHTML에 menu를 집어넣을 것이다.
+        
+        document.write(menu);
+        // menu를 그냥 출력할것이다.
+    </script>
+
+</body>
+</html>
