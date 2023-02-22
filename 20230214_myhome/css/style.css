@@ -1,14 +1,11 @@
 @charset "utf-8";
-html,body{
-    height: 100%;
-}
 
-body{
-    font-family: 'Nanum Gothic', sans-serif;
-    font-size: 14px;
-}
+html,body{height: 100%;}
+
+body{font-family: 'Nanum Gothic', sans-serif; font-size: 14px;}
 
 /* reset  */
+
 *{margin: 0;padding: 0;box-sizing: border-box;}
 a:link,a:visited{text-decoration: none;color:#888} 
 .clearfix:after{content:"";display: block;clear: both;}
@@ -16,15 +13,12 @@ li{list-style: none;}
 h3{font-size:18px;letter-spacing: -1px;}
 
 
+.container{width: 980px;margin: 0 auto;}
 
-.container{
-    width: 980px;margin: 0 auto;
-}
 
 /* header  */
-.top{
-    border-bottom: 1px solid #E3D9D9;margin-bottom: 10px;
-}
+
+.top{border-bottom: 1px solid #E3D9D9;margin-bottom: 10px;}
 
 .submenu{
     float: right;height: 26px;_background: skyblue;
@@ -47,6 +41,7 @@ h3{font-size:18px;letter-spacing: -1px;}
     position: absolute;left: -2px;;top: 11px;
     border-radius: 50%;
 }
+
 .submenu li:first-child a:after{display: none;}
 
 

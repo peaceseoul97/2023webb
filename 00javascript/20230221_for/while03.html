@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="city">도시</div>
+
+    <script>
+        let num = 1;
+        let sum = 0;
+        while(num < 1000){
+            sum = sum + num;  //sum += num
+            num = num + 1;    // num ++
+        }
+
+        console.log(sum)
+        // document.write(sum)
+
+        let sum1 = 0;
+        for(let i=1; i<=10; i++){
+            sum1 = sum1 + i
+        }
+        // 외울것 for문
+
+        console.log(sum1)
+        
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+        let arr = ["서울", "부산","인천"]     // 이해했고.
+        let alink = [
+            "http://www.naver.com",
+            "http://www.nate.com",
+            "http://www.daum.net",             // 역시 이해했고.
+    ]
+
+        console.log(arr[0]);                    // 0부터 하는것은 처음것이 0부터 시작하기 때문에.
+        console.log("배열개수" + arr.length);    //배열갯수 확인하는 것 >> arr.length
+
+
+        let city = "";                          //city에 대한 변수는 변하기때문에 let 사용, "" 한것은 바뀌는 데이터 값. 
+        for(let i=0; i<arr.length; i++){        // for문 이해했고.
+            // document.write(arr[i])           // 브라우저 페이지에 arr[i] 값을 출력하기 위함.
+            city = city + " <a href=' " + alink[i] + " ' >" + arr[i] + "</a><br>";   //이게 뭐꼬?
+        }
+        
+        console.log(city);                       //콘솔창에 띄우는 것.
+        // document.write(city)
+
+        document.getElementById("city").innerHTML = city;  // 이거 왜 쓴다 했지?
+
+       
+    </script>
+</body>
+</html>
