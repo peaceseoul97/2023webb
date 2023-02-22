@@ -18,6 +18,8 @@
             num = num + 1;    // num ++
         }
 
+        // 오히려 for문은 이해했는데, while문이 이해가 안됨.
+
         console.log(sum)
         // document.write(sum)
 
@@ -45,7 +47,10 @@
         let city = "";                          //city에 대한 변수는 변하기때문에 let 사용, "" 한것은 바뀌는 데이터 값. 
         for(let i=0; i<arr.length; i++){        // for문 이해했고.
             // document.write(arr[i])           // 브라우저 페이지에 arr[i] 값을 출력하기 위함.
-            city = city + " <a href=' " + alink[i] + " ' >" + arr[i] + "</a><br>";   //이게 뭐꼬?
+            // city = city + " <a href=' " + alink[i] + " ' >" + arr[i] + "</a><br>";   //이게 뭐꼬?
+            // city += `<a href="${alink[i]}">${arr[i]}</a><br>`;
+
+            city = city + `<a href="${alink[i]}">${arr[i]}</a><br>`;
         }
         
         console.log(city);                       //콘솔창에 띄우는 것.
@@ -55,5 +60,15 @@
 
        
     </script>
+    <!-- "<a href='" + + "'>" + "</a>"
+
+    "<a href="\" + + "\">" + "</a>"
+
+
+    "<a href='" + 변 + "'>" + 변 + "</a>""
+    '<a href="' + 변 + '">' + 변 + '</a>'' -->
+
+    <!-- 외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기외우기 -->
+
 </body>
 </html>
