@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="img"></div>
+    <script>
+        const img = [
+            "img01.jpg",
+            "img02.jpg",
+            "img03.jpg",
+        ]   
+
+        const txt = [
+            "회사개요",
+            "회사개요",
+            "회사개요"
+        ]
+
+        const content = [
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet.",
+            "Lorem ipsum dolor sit amet."
+        ]
+
+        let imgView = "";
+        for(let i=0; i<img.length ; i++){
+            imgView += "<div class = 'imgView'>"
+            imgView += "<img src='../../20230214_myhome/img/" + img[i] + "'>"
+            imgView += "<h3>" + txt[i] + "</h3>"
+            imgView += "<p>" + content[i] + "</p>"
+            imgView += "</div>"
+        }
+
+        console.log(imgView)
+        document.getElementsByClassName("img")[0].innerHTML = imgView;
+    </script>
+    
+    <!-- <div class="imgView"></div>
+    <img src="" alt=""> -->
+    <!-- <img src="../../20230214_myhome/img/img01.jpg" alt=""> --> 
+</body>
+</html>
