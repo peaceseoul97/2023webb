@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="img">
+
+    </div>
     
+    <script>
+        let sum =0;
+        // let an=0;           //전역변수
+        for(let an=0 ; an <= 10 ; an++){
+            sum = sum + an;
+        }
+        console.log(sum)  // 중괄호 밖에 있을땐 합의 값. 안에 있을땐 하나하나의 값이 나옴.
+
+
+        // const arr = [0,1,3,4] // array는 항상 대괄호를 쓴다  
+       //  const hong = {kor:10,eng:30,math:50} // object 변수는 중괄호를 씀.  쓰는법 ex) hong.kor
+        
+       let h=10;
+       const han = ["서울","부산","대구"]
+       
+       let text ="";
+       for(let i=0; i<han.length;i++){
+        text = text + han[i]
+       }
+
+       console.log(text)
+
+       const img = [
+        "img1.jpg",
+        "img2.jpg",
+        "img3.jpg"
+       ]
+       const txt = [
+        "앵무새",
+        "장미",
+        "거위"
+       ]
+       const content = [
+        "Lorem ipsum dolor sit amet.",
+        "Lorem ipsum dolor sit amet.",
+        "Lorem ipsum dolor sit amet."
+       ]
+
+       
+       
+       let imgView = "";
+       for(let i=0 ; i<img.length ; i++){
+            imgView += "<div class='imgView'>"
+            imgView += "<img src='../../images/"+ img[i] +"'>"
+            imgView += "<h3>" + txt[i] + "</h3>";
+            imgView += "<p>" + content[i] + "</p>";
+            imgView += "</div>"
+        }
+
+        console.log(imgView)
+        document.getElementsByClassName("img")[0].innerHTML = imgView;
+    </script>
+    
+<!-- "<img src='../../images/"    변수 "'>" -->
+<!-- <img src="../../images/   img1.jpg" alt="">
+<div class="imgView">
+<img src="../../images/img1.jpg"> -->
+</div>
 </body>
 </html>
