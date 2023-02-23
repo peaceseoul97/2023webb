@@ -5,11 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @charset "utf-8";
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .clearfix::after{content: ""; display: block; clear: both;}
+        
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        .img div.imgView{
+            float: left;
+            width: calc( (100% - 50px) / 3);
+            margin-right: 25px;
+            transition: 0.3s;
+        }
+
+        .img div.imgView:last-child{
+            margin-right: 0;
+        }
+
+        .img img{width: 100%; display: block;}
+        .img .tWrap{padding: 20px, 20px; background: #ccc;}
+
+        .img div.imgView:hover{
+            transition: translateX(10px);
+        }
+
+    </style>
 </head>
 <body>
     
-    <div class="img"></div>
-    <script>
+    <div class="img container"></div>
+            <!-- .imgView -->
+
+    <script class="clearfix">
         const img = [
             "img01.jpg",
             "img02.jpg",
@@ -28,21 +60,34 @@
             "Lorem ipsum dolor sit amet."
         ]
 
+        const link = [
+            "http://www.naver.com",
+            "http://www.daum.net",
+            "http://www.nate.com"
+        ]
+
         let imgView = "";
         for(let i=0; i<img.length ; i++){
-            imgView += "<div class = 'imgView'>"
-            imgView += "<img src='../../20230214_myhome/img/" + img[i] + "'>"
-            imgView += "<h3>" + txt[i] + "</h3>"
-            imgView += "<p>" + content[i] + "</p>"
-            imgView += "</div>"
-        }
+        //     imgView += "<div class = 'imgView'>"
+        //     imgView += "<img src='../../20230214_myhome/img/" + img[i] + "'>"
+        //     imgView += "<div class = 'tWrap'><h3>" + txt[i] + "</h3>"
+        //     imgView += "<p>" + content[i] + "</p>"
+        //     imgView += "</div>"
+        // }
 
         console.log(imgView)
         document.getElementsByClassName("img")[0].innerHTML = imgView;
+
+        imgView +=  `<div class="imgView" onclinck=>
+                        <img src="">
+                        <div class="tWrap">
+                            <h3>afd</h3>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>`;
+                }
     </script>
     
-    <!-- <div class="imgView"></div>
-    <img src="" alt=""> -->
-    <!-- <img src="../../20230214_myhome/img/img01.jpg" alt=""> --> 
+
 </body>
 </html>
