@@ -1,30 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+
+        .btn{
+            width: 200px; 
+            height: 40px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .sky{
+            background: skyblue;
+        }
+
+        .pink{
+            background: pink;
+        }
+
+        .btn:hover{
+            background: #333;
+            color: white;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <script>
+        // print()
+        // han()
 
-        function gugu(dan){
-            for(i=1; i<=9; i++){
-                document.write(dan + "x" + i + "=" + dan*i + "<br>")
+        function print(){
+            console.log("print")
+        }
+
+        const han = function(){
+            console.log("han")
+        }
+
+        function link(mylink){
+            location.href = "http://" + mylink;
+        }
+
+        function link1(mylink){
+            if(mylink == "네이버"){
+                location.href = "http://www.naver.com"
+            }else{
+                alert("경로 없음.")
             }
         }
 
-        gugu(8) 
+        // 무명함수. 이벤트 할 때 많이 들어감.  d
+        // $(document).ready(function(){})      
+        // $(".han").click(function(){})  
+        // document.getElementById("test").onclick = function(){}
+        // function print(){                   
+        //     console.log("han")
+        // }  
+        // const han = function(){} 같은것.
 
-        gugu(11)
-    // function 함수이름(){
-    //     for문(초기값, 조건식, 연산자){
-    //         document.write(변수식)
-    //     }
-    // }
+
+    </script>
+    <div onclick="link('www.naver.com')" class="btn sky">클릭</div>
+    <div onclick="link('www.daum.net')" class="btn pink">클릭</div>
+
+    <div onclick="link1('네이버')" class="btn pink">네이버</div>
+    <div onclick="link1('다음')" class="btn pink">다음</div>
+
+    <div class="box" onmouseover="boxOver('black', 'white')" onmouseout="boxOut()"> </div>
+
+    <script>
+        const boxElem = document.getElementsByClassName("box")[0]
+        
+        // boxElem.onmouseover = function(){
+        //     console.log("mouseover");
+        //     boxElem.style.background = "blue"
+        //     boxElem.style.color = "white"
+        // }
+        // boxElem.onmouseout = function(){
+        //     console.log("mouseover");
+        //     boxElem.style.background = "violet"
+        //     boxElem.style.color = "black"
+        // }
+
+        function boxOver(color,fcolor){
+            boxElem.style.background = color
+            boxElem.style.color = fcolor
+        }
+
+        
+        function boxOut(){
+            boxElem.style.background = "violet"
+            boxElem.style.color = "black"
+        }
     </script>
 
-    
 </body>
 </html>

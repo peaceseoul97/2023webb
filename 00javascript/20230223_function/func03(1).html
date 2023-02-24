@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 1000px;
+            height: 300px;
+            background-color: gold;
+            position: relative;
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+
+        .box1{
+            width: 200px;
+            height: 100px;
+            background: skyblue;
+            position: absolute;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+            right: 0px; top: 0px;
+        }
+
+        .box2{
+            width: 500px;
+            height: 150px;
+            background: pink;
+            position: absolute;
+            bottom: 0px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            transition: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="box1" onmouseover="boxOver('green')" onmouseout="boxOut('')">마우스를<br>가져오시오</div>
+        <div class="box2">이동하겠습니다.</div>
+    </div>
+
+    <script>
+        const box1Elem = document.getElementsByClassName ("box1")[0]
+        const box2Elem = document.getElementsByClassName ("box2")[0]
+
+        function boxOver(){
+            box2Elem.style.background = "green"
+            box2Elem.style.left = "0"
+        }
+
+        function boxOut(){
+            box2Elem.style.background = "pink"
+            box2Elem.style.left = "-100%"
+        }
+    </script>
+</body>
+</html>
