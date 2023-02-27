@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hmenu</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        
+        html,body{height: 100%;}  
+        /* 이거없으면 가운데 안들어감 */
+        
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            /* 화면을 100만큼 쪼갬. 높이가 브라우저의 크기  % 랑 다름.
+              100%는 문서의 크기만큼 나옴  
+              100vh는 문서의 높이만큼 나옴  200%이지만 브라우저 크기가 2배
+              %랑 vh랑 다름 구분 잘 해야함.*/
+        }
+
+        .btnWrap{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #000;
+            position: relative;
+        }
+
+        .line{
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            border-radius: 1.5px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* margin-left: -15px;
+            margin-top: -1.5px; */
+            /* 마진은 자기 자신의 값을 움직임 */    
+            transform: translate(-50%, -50%);
+        }
+
+        .btnWrap.click .line1{
+            transform:translate(-50%, -50%) rotate(45deg);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="btnWrap click" onmouseover="mClick()" onmouseout="moClick()">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+    <SCRIPT>
+        const btnElem = document.querySelector(".btnWrap")
+
+        function mClick(){
+            console.log("click")
+            btnElem.classList.toggle("click")
+            // 토글 > 클릭을 하면 클릭이 생깁니다
+        }
+
+        function moClick(){
+            console.log("click")
+            btnElem.classList.toggle("click")
+            // 토글 > 클릭을 하면 클릭이 생깁니다
+        }
+    </SCRIPT>
+</body>
+</html>
