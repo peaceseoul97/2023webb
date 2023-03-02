@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="score">
+        <table>
+            <tr>
+                <td></td>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const arr= [
+            {
+                name: "안성기",
+                kor : 80,
+                eng : 80,
+                math : 80
+            },
+            {
+                name: "송은희",
+                kor : 80,
+                eng : 80,
+                math : 80
+            },
+            {
+                name: "안수진",
+                kor : 80,
+                eng : 80,
+                math : 80
+            },
+            {
+                name: "안승용",
+                kor : 80,
+                eng : 90,
+                math : 80
+            },
+            {
+                name: "안포리",
+                kor : 80,
+                eng : 80,
+                math : 80
+            }
+        ]
+
+        const sElem = document.querySelector(".score")
+        let kSum = 0
+        let eSum = 0
+        let textSum = `<table>
+                        <tr>
+                            <td></td>
+                            <td>국어</td>
+                            <td>영어</td>
+                            <td>수학</td>
+                        </tr>`
+                        
+        for(let i=0 ; i<arr.length ; i++){
+            textSum += "<tr>"
+            textSum += "<td>" + arr[i].name + "</td>"
+            textSum += "<td>" + arr[i].kor + "</td>"
+            textSum += "<td>" + arr[i].eng + "</td>"
+            textSum += "<td>" + arr[i].math + "</td>"
+            textSum += "</tr>"
+
+            kSum += arr[i].kor;
+            eSum += arr[i].eng;
+            mSum += arr[i].math;
+        }
+
+        textSum += "    <tr>";
+        textSum += "        <td>평균</td> ";
+        textSum += "        <td>"+ kSum / arr.length+"</td> ";
+        textSum += "        <td>"+ eSum / arr.length+"</td> ";
+        textSum += "        <td>"+ mSum / arr.length+"</td> ";
+        textSum += "    </tr>";
+
+        textSum += "</table>";
+    
+        sElem.innerHTML = textSum
+    </script>
+    <!-- <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table> -->
+</body>
+</html>

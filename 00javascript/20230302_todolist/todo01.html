@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투두리스트~</title>
+    <style>
+        html,body{height: 100%;}
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        a:link,a:visited{text-decoration: none; color: #333;}
+        li{list-style-type: none;}
+
+        .inpWrap{
+            margin: 0 auto; 
+            width: 300px;
+            background: skyblue;    
+        }
+
+        .listView{
+            width: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp" value="" placeholder="오늘의 할일은...">
+        <button class="btn1">확인버튼눌러 얼른</button>
+    </div>
+    <div class="listView">
+
+    </div>
+
+    <script>
+        const inpElem = document.querySelector(".inp");
+        const btnElem = document.querySelector(".btn1");
+        const listElem = document.querySelector(".listView");
+
+        const listData = [
+            "동해물과",
+            "동해물과1",
+            "동해물과2",
+            "동해물과34",
+        ]
+
+        // btnElem.addEventListener("이벤트이름", 리스너)
+
+        function viewData(){
+            let listTitle = "<ul>";
+            for(let i=0 ; i<listData.length ; i++){
+                listTitle += "<li>" + listData[i] + "</li>" 
+            }
+            listTitle += "</ul>"
+            console.log(listTitle)
+            listElem.innerHTML = listTitle
+        }
+        viewData();
+
+        btnElem.addEventListener("click", function(){
+            if(inpElem.value == ""){
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }else{
+                listData.push(inpElem.value)
+                viewData();
+                inpElem.value = ""
+            }
+                console.log(inpElem.value);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp" value="" placeholder="입력하시오">
+        <button class="btn1">눌러</button>
+    </div>
+    <div class="liseView"></div>
+
+    <script>
+        const inpElem = document.querySelector(".inp");
+        const btnElem = document.querySelector(".btn1");
+        const listElem = document.querySelector(".listView");
+        
+        const listData = [
+            "암ㄴㄹㅇㄴㅇㄻㄴ",
+            "암ㄴㄹㅇㄴㅇㄻㄴ",
+            "암ㄴㄹㅇㄴㅇㄻㄴ",
+            "암ㄴㄹㅇㄴㅇㄻㄴ"
+        ]
+
+        function viewData(){
+            let listTitle = "<ul>";
+                for(let i=0 ; i<listData.length ; i++){
+                    listTitle += `<li>${listData[i]}</li>`
+                }
+                listTitle += "</ul>"
+                console.log(listTitle)
+                listElem.innerHTML = listTitle
+        }
+        viewData();
+
+        btnElem.addEventListener("click", function(){
+            if(inpElem.value == ""){
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }else{listData.push(inpElem.value)
+                 viewData();
+                 inpElem.value = ""
+            }
+                console.log(inpElem.value);
+        })
+
+    </script>
+    <!-- value 값은 빈 공간으로 남겨서 아래 데이터 불러올 수 있게 도와주는 역할 -->
+    <!-- <div class="inpWrap">
+        <input type="text" class="inp" value="" placeholder="오늘의 할일은...">
+        <button class="btn1">확인버튼눌러 얼른</button>
+    </div>
+    <div class="listView">
+
+    </div> -->
+</body>
+</html>

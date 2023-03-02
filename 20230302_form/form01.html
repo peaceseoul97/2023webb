@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        fieldset{
+            border: 0 none;
+        }
+
+        .blind{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -9999px;
+        }
+
+        input:focus{
+            background: violet;
+            outline: none;
+            border: 0 none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <fieldset></fieldset> 한 영역
+        legend 태그 - 영역의 제목이 돌출됨.
+        label과 input 은 거의 한 세트. label을 효과적으로 사용하는 사람 있음.
+        label for의 정보와 , input id의 정보가 똑같아야함.
+        input 태그 - 정보를 입력할 수 있는 상자.
+
+        스타일시트*
+        outline 기억해두기. - 겉 태두리 사라지는 효과.
+        
+         -->
+    <form action="#" method="get">
+        <fieldset>
+            <legend class="blind">기본정보</legend>
+            <label for="myName">이름</label>
+            <input type="text" name="name" placeholder="성명" id="myName">
+
+            <label for="pwd">비밀번호</label>
+            <input type="password" name="pw" placeholder="비밀번호" id="pwd">
+
+            <input type="submit" value="전송">
+        </fieldset>
+    </form>
+</body>
+</html>
