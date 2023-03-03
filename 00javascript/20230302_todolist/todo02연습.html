@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1"> + </button>
+    </div>
+
+    <div class="listView">
+
+    </div>
+
+    <script>
+        const inpElem = document.querySelector(".inp")
+        const btn1Elem = document.querySelector(".btn1")
+        const listElem = document.querySelector(".listView")
+
+        let listData = [
+            "홍길동",
+            "홍길동",
+            "홍길동",
+            "홍길동",
+            "홍길동",
+        ]
+
+        btn1Elem.addEventListener("click",function(){
+            if(inpElem.value == ""){
+                alert("오늘의 할 일을 입력하시오.")
+                inpElem.focus()
+            }else{
+                listData.push(inpElem.value);
+                // push()
+                inpElem.value = ""
+                alert("맞습니다.")
+            }
+        })
+
+        // function push(){
+        //     let lista = ""
+        //     lista = lista + "<ul>"
+        //     for(i=0;i<listData.length;i++){
+        //         lista= lista + "<li>"+listData[i]+"</li>"
+        //     }
+        //     lista = lista + "</ul>"
+            
+        //     listElem.innerHTML = lista
+        // }
+        // push()
+        
+        // function viewData(){
+        //     let viewList = "";
+
+        //     listData.forEach(function)
+        // }
+        push()
+        </script>
+</body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+</html>

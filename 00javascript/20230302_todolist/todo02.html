@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .inpWrap,.listView{
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .inpWrap{
+            background: pink;
+        }
+
+        /* .listView{} */
+
+        .btnAllDel{display: none;}
+        .listView ul li{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1"> + </button>
+    </div>
+    
+    <div class="listView">
+        <!-- 작업한 게 출력되는 공간. --> 
+        <!-- <ul class="clearfix"><li><span>자바스크립트1</span>  <a href="#">[삭제]</a></li></ul> -->
+        <!-- 1번 질문. 위에서 span태그를 왜 썼지? 인라인 요소라고 했는데, 공간분할인건가? -->
+        <ul>
+            
+        </ul>
+        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+    </div>
+
+    <script>
+        const inpElem = document.querySelector(".inp")
+        const btn1Elem = document.querySelector(".btn1")
+        const listElem = document.querySelector(".listView ul")
+        // 2번 질문.  위에 .listView ul 이라고 쓴 이유는 ul 안에 button을 작동시키기 위함인가?
+        const btnAllElem = document.querySelector(".btnAllDel")
+
+        let listData = [];
+        // 여기다가 let을 선언한 이유는, listData의 값들을 변동시킬수 있게 해주는 것.
+
+        btn1Elem.addEventListener("click",function(){
+            // console.log(inpElem.value)
+            //콘솔창에 들어오나 확인하는 과정.
+
+            // 아래 != 넣은건 빈 공간이 아니면 이라는 뜻  
+            // 3번 질문. inpElem.value 중의 저 value를 어떻게 이해하면 좋을까?
+            if(inpElem.value != ""){
+                listData.push(inpElem.value)
+                inpElem.value = ""
+                viewData();
+            }else{
+                alert("오늘의 할 일을 입력하세요.")
+                inpElem.focus()
+            }
+        })
+        
+        function viewData(){
+            // let 으로 쓴건 지속적으로 데이터가 들어가기 위해서. 변하기 위해서
+            let viewList = "";
+            // for와 foreach는 반드시 해야함. 암기하고 이해하고 설명할 것.
+            // for(let i=0 ; i<listData.length ; i++){
+            //     viewList += "<li>" + listData[i] + "<span onclick = 'itemDel(" + i +")'>삭제</span></li>" 
+            // }
+
+
+            // 여기 집중적 공부. 백팁
+            listData.forEach(function(item,index){
+                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
+            })
+            //여기여기 집중적 공부. foreach
+        
+
+            listElem.innerHTML = viewList
+
+            if(listData.length>0){
+                btnAllElem.style.display = "block"
+            }else{
+                btnAllElem.style.display = "none"
+            }
+            // 솔직히 여기 이해 안됨 개망했음;;
+        };
+        viewData();
+
+        function allDel(){
+            listData = []
+            viewData();
+        }
+
+        function itemDel(index){
+            listData.splice(index,1)
+            viewData();
+        }
+
+        
+        
+    </script>
+</body>
+</html>
