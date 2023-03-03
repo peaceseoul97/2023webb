@@ -48,7 +48,6 @@
         let listData = [];
 
         btn1Elem.addEventListener("click",function(){
-            // console.log(inpElem.value)
             if(inpElem.value != ""){
                 listData.push(inpElem.value);
                 inpElem.value = ""
@@ -60,6 +59,7 @@
         })
         function viewData(){
             let viewList = "";
+           
             // for(let i=0;i<listData.length;i++){
             //     viewList += "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
             // }
