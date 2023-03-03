@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>투두리스트~</title>
-    <style>
+    <!-- <style>
         html,body{height: 100%;}
         *{margin: 0;padding: 0;box-sizing: border-box;}
         a:link,a:visited{text-decoration: none; color: #333;}
@@ -21,16 +21,20 @@
             width: 300px;
             margin: 0 auto;
         }
-    </style>
+
+    </style> -->
 </head>
 <body>
     <div class="inpWrap">
-        <input type="text" class="inp" value="" placeholder="오늘의 할일은...">
-        <button class="btn1">확인버튼눌러 얼른</button>
+        <input type="text" class="inp" value="" placeholder="???">
+        <button class="btn1">확인</button>
     </div>
     <div class="listView">
 
     </div>
+    <!-- listView 에 대해서 내일 또 질문하기. -->
+    <!-- listView는 표출해주기 위해 쓰는것 -->
+    <!-- listData는 데이터가 저장된 공간. -->
 
     <script>
         const inpElem = document.querySelector(".inp");
@@ -45,6 +49,19 @@
         ]
 
         // btnElem.addEventListener("이벤트이름", 리스너)
+        // 내일 다시 정확히 물어보기.
+        
+        btnElem.addEventListener("click", function(){
+            if(inpElem.value == ""){
+                alert("오늘의 할일을 입력하세요");
+                inpElem.focus()
+            }else{
+                listData.push(inpElem.value)
+                viewData();
+                inpElem.value = ""
+            }
+                console.log(inpElem.value);
+        })
 
         function viewData(){
             let listTitle = "<ul>";
@@ -57,17 +74,6 @@
         }
         viewData();
 
-        btnElem.addEventListener("click", function(){
-            if(inpElem.value == ""){
-                alert("오늘의 할일을 입력하세요");
-                inpElem.focus()
-            }else{
-                listData.push(inpElem.value)
-                viewData();
-                inpElem.value = ""
-            }
-                console.log(inpElem.value);
-        })
     </script>
 </body>
 </html>
