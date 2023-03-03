@@ -12,7 +12,7 @@
             margin: 0 auto;
         }
         .inpWrap{background-color: pink;margin-bottom: 10px;}
-        .listView{}
+        /* .listView{} */
         .btnAllDel{display: none;}
         .listView ul li{
             display: flex;
@@ -34,9 +34,11 @@
         <button class="btn1">입력</button>
     </div>
     <div class="listView">
-        <ul></ul>
+        <ul>
+            <li>listData[i] <span onclick='itemDel(i)'>삭제</span></li>
+        </ul>
         <div class="view">오늘의 할일을 입력하세요</div>
-        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+        <button class="btnAllDel">전체삭제</button>
     </div>
     <script>
         const inpElem = document.querySelector(".inp");
@@ -60,13 +62,13 @@
         function viewData(){
             let viewList = "";
            
-            // for(let i=0;i<listData.length;i++){
-            //     viewList += "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
-            // }
+            for(let i=0;i<listData.length;i++){
+                viewList += "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
+            }
 
-            listData.forEach(function(item,index){
-                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
-            })
+            // listData.forEach(function(item,index){
+            //     viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
+            // })
 
             if(listData.length>0){
                 btnAllElem.style.display =  "block";
@@ -80,14 +82,18 @@
         };
         viewData();
 
-        function allDel(){
-            listData = [];
-            viewData();
-        }
+        // function allDel(){
+        //     listData = [];
+        //     viewData();
+        // }
         function itemDel(index){
             listData.splice(index,1);
             viewData();
         }
+        btnAllElem.addEventListener("click",function(){
+            listData = [];
+            viewData();
+        })
 
     </script>
 </body>

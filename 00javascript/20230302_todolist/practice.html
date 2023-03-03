@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="momo">
+        <input type="text" class="momo" value="" placeholder="???">
+        <button class="btn1">확인</button>
+    </div>
+    <div class="nono">
+
+    </div>
+
+    <script>
+        const momo = document.querySelector(".momo")
+        const hoho = document.querySelector(".hoho")
+        const nono = document.querySelector(".nono")
+
+        const javasaeki = [
+            "안승용",
+            "유이레",
+            "권슬기"
+        ]
+
+        function melong(){
+            let sum = ""
+                sum = sum + "<ul>"
+                    for(i=0 ; i<javasaeki.length ; i++){
+                        sum = sum + "<li>" + javasaeki[i] + "</li>"
+                    }
+                sum = sum + "</ul>"
+                nono.innerHTML = sum
+                // hoho.innerHTML = sum
+        }
+
+        melong()
+
+        
+    </script>
+
+</body>
+</html>
