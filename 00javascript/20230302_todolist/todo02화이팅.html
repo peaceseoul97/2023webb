@@ -50,15 +50,11 @@
         const btnAllElem = document.querySelector(".btnAllDel");
 
         let listData = [
-            "sadfdsf",
-            "sadfdsf1",
-            "sadfdsf2",
-            "sadfdsf3",
-            "sadfdsf4",
-            "sadfdsf5",
-            "sadfdsf6",
-            "sadfdsf7",
-            "sadfdsf8"
+            "adsfasd",
+            "adsfasd",
+            "adsfasd",
+            "adsfasd",
+            "adsfasd"
         ];
 
         btn1Elem.addEventListener("click",function(){
@@ -73,10 +69,11 @@
                 inpElem.focus()
             }
         })
+
         function viewData(){
             let viewList = "";
             for(let i=0;i<listData.length;i++){
-                viewList += "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
+                viewList = viewList + "<li>"+ listData[i] +"<span onclick='itemDel("+ i + ")'>삭제</span></li>"
             }
 
             // listData.forEach(function(item,index){
@@ -99,11 +96,11 @@
         }
 
         function itemDel(
-            
         ){
             listData.splice(index,1);
             viewData();
         }
+        
 
     </script>
 </body>

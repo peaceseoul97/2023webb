@@ -35,17 +35,18 @@
 
     <script>
 
+    // var  let  const
 
         const inpElem = document.querySelector(".inp");
         const btnElem = document.querySelector(".btn1");
         const listElem = document.querySelector(".listView");
 
         const listData = [
-            "안승용",
-            "송은희",
-            "안수진",
-            "안포리",
-            "안성기"
+            "Asdfafds",
+            "Asdfafds",
+            "Asdfafds",
+            "Asdfafds",
+            "Asdfafds"
         ]
         
         // btnElem.addEventListener("이벤트이름",리스터)
@@ -59,7 +60,6 @@
                 viewData()
                 inpElem.value = ""
             }
-            
         })
 
         function viewData(){
@@ -68,17 +68,18 @@
                 for(let i=0 ; i<listData.length ; i++){
                 listTitle = listTitle + "<li>" + listData[i] + "</li>" 
             }
+
+            listTitle = "<ul>" + "<li>" + listData[i] + "</li>" + "</ul>"
+
             
+            listElem.innerHTML = listTitle
+
             // for(let i=0;i<listData.length;i++){
             //     listTitle += `<li>${listData[i]}</li>`
             // }
-
-            listTitle = listTitle + "</ul>"
-            listElem.innerHTML = listTitle
-
         }
         
-        viewData();
+        viewData()
     </script>
 </body>
 </html>
