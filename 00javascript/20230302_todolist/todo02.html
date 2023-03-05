@@ -50,7 +50,21 @@
         // 2번 질문.  위에 .listView ul 이라고 쓴 이유는 ul 안에 button을 작동시키기 위함인가?
         const btnAllElem = document.querySelector(".btnAllDel")
 
-        let listData = [];
+        let listData = [
+            "안승용",
+            "안승용",
+            "ㅁㄴㅇㄻㄴㅇㄹ",
+            "안승용5",
+            "안승용4",
+            "안승용3",
+            "안승용2",
+            "안승용1",
+            "안승용0",
+            "안승용1234",
+            "안승용7777777777",
+            "안승용121333334",
+            "안승용121234",
+        ];
         // 여기다가 let을 선언한 이유는, listData의 값들을 변동시킬수 있게 해주는 것.
 
         btn1Elem.addEventListener("click",function(){
@@ -73,16 +87,19 @@
             // let 으로 쓴건 지속적으로 데이터가 들어가기 위해서. 변하기 위해서
             let viewList = "";
             // for와 foreach는 반드시 해야함. 암기하고 이해하고 설명할 것.
-            // for(let i=0 ; i<listData.length ; i++){
-            //     viewList += "<li>" + listData[i] + "<span onclick = 'itemDel(" + i +")'>삭제</span></li>" 
-            // }
+            for(let i=0 ; i<listData.length ; i++){
+                // viewList += "<li>" + listData[i] + "<div onclick = 'itemDel(" + i +")'>삭제</div></li>" 
+                viewList += "<li><span>" + item + "</span><span onclick=itemDel(" + index + ")>삭제</span></li>"
+            }
 
 
             // 여기 집중적 공부. 백팁
-            listData.forEach(function(item,index){
-                viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
-            })
+            // listData.forEach(function(item,index){
+            //     viewList = viewList  + "<li><span>" + item + "</span><span onclick = 'itemDel'" + index + ">삭제</span></li>"
+            // })
+            
             //여기여기 집중적 공부. foreach
+            // viewList += `<li><span>${item}</span><span onclick="itemDel(${index})">삭제</span></li>`
         
 
             listElem.innerHTML = viewList
@@ -92,20 +109,20 @@
             }else{
                 btnAllElem.style.display = "none"
             }
-            // 솔직히 여기 이해 안됨 개망했음;;
         };
         viewData();
-
+        
         function allDel(){
             listData = []
             viewData();
         }
-
+        
         function itemDel(index){
-            listData.splice(index,1)
+            listData.splice(index,5)
             viewData();
         }
-
+        // 솔직히 여기 이해 안됨 개망했음;;
+        
         
         
     </script>
