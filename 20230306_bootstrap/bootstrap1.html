@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body>
+    <!-- container-fluid 꽉 채워지는 것. -->
+    <div class="cont1 bg-success py-5">
+        <div class="container">
+            <h4 class="text-center">gallery</h4>
+            <p  lass="text-center">Lorem ipsum dolor sit amet.</p>
+            <div class="row">
+                <!-- col만 있을때 자리가 분산. -->
+                <!-- 기본값 col-12 -->
+                <!-- col-12 >> 12칸을 차지해서 아래 2 3 4부분에는 아래칸으로 내려감.
+                    기본값으로 col값은 12개씩 갖고있음-->
+                <!-- md 이상일 때 3칸씩먹음. -->
+                <!-- 핵심기술 col-12 / col-sm-6 / col-md-3 등등..  -->
+                <!-- 예를들어 sm-6이상일 때, md-3 이상일 때 -->
+                <div class="col-12 col-sm-6 col-md-3 mb-3 mb-md-0">
+                    <img src="../images/testimg.jpg" alt="" style="width: 100%;">
+                    <div class="tWrap bg-white px-4 py-3">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ea.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-3 mb-md-0">
+                    <img src="../images/testimg.jpg" alt="" style="width: 100%;">
+                    <div class="tWrap bg-white px-4 py-3">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ea.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-3 mb-md-0">
+                    <img src="../images/testimg.jpg" alt="" style="width: 100%;">
+                    <div class="tWrap bg-white px-4 py-3">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ea.</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-3 mb-md-0">
+                    <img src="../images/testimg.jpg" alt="" style="width: 100%;">
+                    <div class="tWrap bg-white px-4 py-3">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, ea.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
