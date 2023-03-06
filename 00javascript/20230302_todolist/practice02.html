@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1"> + </button>
+    </div>
+
+    <div class="listView">
+        <ul></ul>
+        <div class="view">오늘의 할 일을 입력하시오.</div>
+        <button class="btnAllDel" onclick="allDel()">전체삭제</button>
+    </div>
+
+    <script>
+        const inpElem = document.querySelector(".inp")
+        const btn1Elem = document.querySelector(".btn1")
+        const listElem = document.querySelector(".listView ul")
+        const listNoneElem = document.querySelector(".listView .view")
+        const btnAllElem = document.querySelector(".btnAllDel")
+
+        let listData = [
+            "안승용",
+            "권슬기",
+            "유이레"
+        ]
+
+        btn1Elem.addEventListener("click",function(){
+            if(inpElem.value == ""){
+                alert("오늘의 할 일을 입력하시오.")
+                inpElem.focus()
+            }else{
+                listData.push(inpElem.value)
+                inpElem.value = ""
+                viewData()
+            }
+        })
+
+        function viewData(){
+            let viewList = ""
+                    for(let i=0 ; i<listData.length ; i++){
+                    viewList += "<li>" + listData[i] + "<span onclick='itemDel(" + i + ")'>삭제</span></li>"
+                    }
+                    
+                    if(listData.length>0){
+                        btnAllElem.style.display = "block";
+                    }else{
+                        btnAllElem.style.display = "none";
+                    }
+                    
+                listElem.innerHTML = viewList 
+        }
+
+        viewData()
+        
+        function allDel(){
+            listData = [];
+            viewData();
+        }
+
+        function itemDel(i){
+            listData.splice(listData[i],1)
+            viewData()
+        }
+        
+        // btnAllElem.addEventListener("click",function(){
+        //     listData = [];
+        //     viewData();
+        // })
+    </script>
+</body>
+</html>
