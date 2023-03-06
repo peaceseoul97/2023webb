@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1"> + </button>
+    </div>
+
+    <div class="listView">
+
+    </div>
+
+    <script>
+        const inp = document.querySelector(".inp")
+        const btn1 = document.querySelector(".btn1")
+        const listView = document.querySelector(".listView")
+
+        const listData = [
+            "안승용",
+            "안성기",
+            "안포리",
+            "안수진",
+            "송은희"
+        ]
+
+        btn1.addEventListener("click",function(){
+            if(inp.value == ""){
+                alert("오늘의 할 일을 입력하시오.")
+                inp.focus()
+            }else{
+                listData.push(inp.value)
+                viewList()
+                inp.value = ""
+            }
+        })
+
+        function viewList(){
+            let listTitle = "<ul>"
+
+                for(let i = 0 ; i<listData.length ; i++){
+                listTitle = listTitle + "<li>" + listData[i] + "</li>"
+                }
+
+                 listTitle = listTitle + "</ul>"
+
+                 listView.innerHTML = listTitle
+                }
+                
+        viewList()
+    </script>
+</body>
+</html>

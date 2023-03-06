@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내일이 마지막인 todolist</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        .btn_modi{
+            display: none;
+        }
+
+        .inpWrap,.listView{
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        .inpWrap{background: skyblue;}
+        .listView{background: violet;}
+
+        .listView ul li{
+            display: flex; 
+            padding: 5px 0;
+        }
+
+        .listView ul li .list{
+            display: flex; 
+            align-items: center; 
+            padding-left: 10px;
+        }
+        .icon a{
+            color: white;
+        }
+
+        .listView ul li .icon{
+            margin-left: auto;
+            background: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            gap: 10px;
+        }  /* 외우기. 아이템이 2개일때 벌어지는것. 다시 물어보기.*/
+    </style>
+</head>
+
+<body>
+   <!-- <i class="fa-solid fa-trash-can"></i>
+   <i class="fa-solid fa-hammer"></i>
+   <i class="fa-solid fa-square-check"></i> -->
+
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn_input">입력</button>
+        <button class="btn_modi">수정</button>
+    </div>
+
+    <div class="listView">
+        <ul></ul>
+        <button class="btnAllDel" onclick="listAllDel()">전체삭제</button>
+    </div>
+
+    <script>
+        const inpElem = document.querySelector(".inp")
+        const btnIpElem = document.querySelector(".btn_input")
+        const btnMoElem = document.querySelector(".btn_modi")
+        const listElem = document.querySelector(".listView ul")
+
+        let listData = []
+        
+
+        // btnIpElem.addEventListener("click",function(){})
+        // $(".btn_input").on("click",function(){}) $(".inp").val()
+        // 첫줄이랑 위에줄이랑 똑같은거.
+
+        btnIpElem.addEventListener("click",function(){
+            
+            if(inpElem.value != ""){
+                // listData.push(inpElem.value)   
+                localStorage.setItem(inpElem.value, inpElem.value) 
+                viewData()
+                inpElem.value = ""
+            }else{
+                alert("오늘의 할 일을 입력하시오.")
+                inpElem.focus()
+            }
+            console.log(listData.value)
+        })
+
+        // 누적데이터 넣는과정
+        // forEach는 무조건 배열이 와야함. listData는 무조건 배열.
+        // index값을 안줘도 됨. (아이팀 옆)
+
+        function viewData(){
+            listData = []
+
+            for(let i=0;i<localStorage.length;i++){
+                listData.push(localStorage.key(i))
+            }
+
+            console.log(listData)
+
+            let viewList = "";
+                listData.forEach(function(item,index){
+                    viewList += `<li>
+                                    <div class = "list">${item}</div>
+                                    <div class= "icon">
+                                        <a href = "#" onclick="itemDel('${item}')"><i class="fa-solid fa-trash-can"></i></a>
+                                        <a href = "#" onclick="itemDel()"><i class="fa-solid fa-hammer"></i></a>
+                                        <a href = "#" onclick="itemDel()"><i class="fa-solid fa-square-check"></i></a>
+                                    </div>
+                                </li>`                    
+                })
+                
+                listElem.innerHTML = viewList
+            }
+            
+
+            // console.log(listData[index])
+            // console.log(item) 과 같은것.
+
+            // console.log(index) >> 숫자가 나옴. ex) 0,1,2
+
+        viewData()
+
+        function itemDel(item){
+            console.log(item)
+            localStorage.removeItem(item)
+            viewData()
+        }
+
+
+
+    </script>
+</body>
+</html>
