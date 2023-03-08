@@ -18,12 +18,12 @@
             margin: 0 auto;
         }
 
-        .inpWrap{background: skyblue;}
-        .listView{background: violet;}
+        .inpWrap{background: rgb(196, 83, 211);}
+        .listView{background: rgb(106, 106, 212);}
 
         .listView ul li{
             display: flex; 
-            padding: 10px 10px;
+            padding: 5px 0;
         }
 
         .listView ul li .list{
@@ -47,10 +47,6 @@
 </head>
 
 <body>
-   <!-- <i class="fa-solid fa-trash-can"></i>
-   <i class="fa-solid fa-hammer"></i>
-   <i class="fa-solid fa-square-check"></i> -->
-
     <div class="inpWrap">
         <input type="text" class="inp">
         <button class="btn_input">입력</button>
@@ -69,16 +65,10 @@
         const listElem = document.querySelector(".listView ul")
 
         let listData = []
-        
-
-        // btnIpElem.addEventListener("click",function(){})
-        // $(".btn_input").on("click",function(){}) $(".inp").val()
-        // 첫줄이랑 위에줄이랑 똑같은거.
 
         btnIpElem.addEventListener("click",function(){
             
-            if(inpElem.value != ""){
-                // listData.push(inpElem.value)   
+            if(inpElem.value != ""){   
                 localStorage.setItem(inpElem.value, inpElem.value) 
                 viewData()
                 inpElem.value = ""
@@ -89,9 +79,6 @@
             console.log(listData.value)
         })
 
-        // 누적데이터 넣는과정
-        // forEach는 무조건 배열이 와야함. listData는 무조건 배열.
-        // index값을 안줘도 됨. (아이팀 옆)
 
         function viewData(){
             listData = []
@@ -116,13 +103,6 @@
                 
                 listElem.innerHTML = viewList
             }
-            
-            
-
-            // console.log(listData[index])
-            // console.log(item) 과 같은것.
-
-            // console.log(index) >> 숫자가 나옴. ex) 0,1,2
 
         viewData()
 
@@ -132,8 +112,8 @@
             viewData()
         }
 
-        function listAllDel(){
-            localStorage.clear()
+        function listAllDel(item){
+            listData = []
             viewData()
         }
 

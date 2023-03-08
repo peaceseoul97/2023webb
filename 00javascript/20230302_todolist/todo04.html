@@ -19,7 +19,7 @@
         }
 
         .inpWrap{background: skyblue;}
-        .listView{background: rgb(186, 214, 29);}
+        .listView{background: rgb(109, 106, 212);}
 
         .listView ul li{
             display: flex; 
@@ -46,7 +46,7 @@
 
         .listView ul li .icon a{color: white;}
 
-        .item.done{background: rgb(106, 106, 212);}
+        .item.done{background: black;}
     </style>
 </head>
 
@@ -69,9 +69,9 @@
 
     <script>
         let listData = [
-            {todo:"안승용 바보멍청이",done:false},
-            {todo:"슬기님 완전 천재",done:false},
-            {todo:"이레님 차세대 에이스",done:false}
+            // {todo:"안승용 바보멍청이",done:false},
+            // {todo:"슬기님 완전 천재",done:false},
+            // {todo:"이레님 차세대 에이스",done:false}
         ]
 
         const inpElem = document.querySelector(".inp")
@@ -79,21 +79,25 @@
         const numElem = document.querySelector(".num")
         const btnMoElem = document.querySelector(".btn_modi")
         const listElem = document.querySelector(".listView ul")
-        const btnAllElem = document.querySelector(".btnAllDel")
+        // const btnAllElem = document.querySelector(".btnAllDel")
 
+        // 입력
 
         btnIpElem.addEventListener("click", function(){
 
-            let value = {"todo" : inpElem.value,"done":false}
+            let value = {"todo":inpElem.value,"done":false}
 
             if(inpElem.value != ""){
-                listData.push(value);
+                listData.push(value)
+
+                let valueData = JSON.stringify(listData)
+                localStorage.setItem("todoData",valueData)
+
                 viewData()
                 inpElem.value = ""
             }else{
                 alert("오늘의 할일을 입력하시오.")
                 inpElem.focus()
-
             }
 
         })
@@ -105,17 +109,26 @@
             inpElem.value = ""
             btnIpElem.style.display = "inline-block"
             btnMoElem.style.display = "none"
+
+            // localStorage get
+            let valueData = JSON.stringify(listData)
+            localStorage.setItem("todoData",valueData)
+
             viewData()
         })
 
         function viewData(){
+            if(localStorage.length>0){
+                let localData = localStorage.getItem("todoData")
+                listData = JSON.prase(localData)
+            }
 
             let viewList = "";
             listData.forEach(function(item,index){
                 console.log(item.todo)
 
                 if(item.done == true){
-                    viewList += `<li class="item done">${item.todo}`
+                    viewList += `<li class="item done">${listData[index].todo}`
                 }else{
                     viewList += `<li class="item">${item.todo}`
                 }

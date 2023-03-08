@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inpWrap">
+        <input type="text" class="inp">
+        <button class="btn1"> + </button>
+    </div>
+
+    <div class="listView">
+        <ul></ul>
+        <div class="view"></div>
+        <button class="btnAllDel"></button>
+    </div>
+
+    <script>
+        const inpElem = document.querySelector (".inp")
+        const btn1Elem = document.querySelector (".btn1")
+        const listElem = document.querySelector (".listView ul")
+        const listDelElem = document.querySelector (".listView .view")
+        const btnDelElem = document.querySelector (".btnAllDel")
+
+        let listData = [
+            "안승용",
+            "유이레",
+            "권슬기",
+            "김종민"
+        ]
+
+        btn1Elem.addEventListener("click", function (){
+            if(inpElem.value == ""){
+                alert("할 일 입력.")
+                viewData()
+            }else{
+                listData.push(inpElem.value)
+                inpElem.value = ""
+                viewData()
+            }
+        })
+
+        function viewData(){
+            let viewList = ""
+            for(let i=0 ; i<listData.length ; i++){
+                viewList += "<li>" + listData[i] + "</li>"
+            }
+
+            listElem.innerHTML = viewList
+        }
+    </script>
+</body>
+</html>
