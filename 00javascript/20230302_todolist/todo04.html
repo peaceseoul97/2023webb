@@ -102,6 +102,14 @@
 
         })
 
+        // function modi(todo,index){
+        //     console.log(todo+index)
+        //     inpElem.value = todo
+        //     numElem.value = index
+        //     btnIpElem.style.display = "none"
+        //     btnMoElem.style.display = "inline-block"
+        // }
+
         //수정
         btnMoElem.addEventListener("click",function(){
             listData[numElem.value].todo = inpElem.value
@@ -163,7 +171,7 @@
             listData[index].done = !listData[index].done;
             viewData()
                 //!는 not을 의미.   오른쪽 항은 true false만 이용.
-        }
+        }   
 
         function listAllDel (){
             listData = []
