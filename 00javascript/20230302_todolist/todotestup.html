@@ -42,7 +42,7 @@
             border-radius: 5px;
             font-size: 12px;
             gap: 10px;
-        }  /* 외우기. 아이템이 2개일때 벌어지는것. 다시 물어보기.*/
+        }
 
         .listView ul li .icon a{color: white;}
 
@@ -83,7 +83,6 @@
         const numElem = document.querySelector(".num")
         const btnMoElem = document.querySelector(".btn_modi")
         const listElem = document.querySelector(".listView ul")
-        // const btnAllElem = document.querySelector(".btnAllDel")
 
         // 입력
 
@@ -105,14 +104,6 @@
             }
 
         })
-
-        // function modi(todo,index){
-        //     console.log(todo+index)
-        //     inpElem.value = todo
-        //     numElem.value = index
-        //     btnIpElem.style.display = "none"
-        //     btnMoElem.style.display = "inline-block"
-        // }
 
         //수정
         btnMoElem.addEventListener("click",function(){
@@ -153,9 +144,6 @@
             })
             listElem.innerHTML = viewList
 
-            // for(let i=0 ; i<listData.length ; i++){
-            //     console.log(listData[i].done)
-            // }
         }
         viewData()
 
@@ -170,18 +158,11 @@
 
         function done(index){
             console.log(index)
-            // if(listData[index].done == true){
-            //     listData[index].done = false
-            // }else{
-            //     listData[index].done = true
-            // }
-
             listData[index].done = !listData[index].done;
             let valueData = JSON.stringify(listData)
             localStorage.setItem("todoData",valueData)
             
             viewData()
-                //!는 not을 의미.   오른쪽 항은 true false만 이용.
         }   
 
         function listAllDel (){
@@ -192,11 +173,6 @@
             btnIpElem.style.display = "inline-block";
             viewData()
         }
-
-        // btnAllElem.addEventListener("click",function(){
-        //     listData = []
-        //     viewData()
-        // })
 
         function modi(todo,index){
             console.log(todo+index)
