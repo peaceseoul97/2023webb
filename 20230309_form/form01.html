@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="action.jsp" method="post">
+        <select name="fruit" id="fruit" onchange="selClick()"><!-- onchange 중요. 왜 중요? -->
+            <option value="딸기">딸기</option>
+            <option value="사과" selected>사과</option><!-- 사과를 기본 선택 한 것. / selected 는 기본선택 -->
+            <option value="바나나">바나나</option>
+        </select>
+    </form>
+    <script>
+        const sel = document.querySelector("#fruit")// id 는 #을 씀. / class는 .을 씀
+        console.log(sel.selectedIndex)
+
+        function selClick(){
+            let value = sel.options[sel.selectedIndex].value // onchange 때문에 select를 반영할 때마다 바뀜.
+            console.log(value)
+        }
+    </script>
+    
+    <!-- <input type="text">
+    <input type="submit">  자료전송 하는것. submit을 클릭하면 action.jsp로 파일이 이동. -->
+</body>
+</html>
