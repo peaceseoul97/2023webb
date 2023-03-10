@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{
+            background-color: #f00;
+            width: 100px; height: 100px;
+            transition: 0.3s; /* 에니메이션 효과 */
+           
+        }
+
+        .box.big{width: 200px;}
+    </style>
+</head>
+<body>
+    <button class="bClick">변경</button>
+    <button class="show">보이기</button>
+    <div class="box">
+
+    </div>
+    <!-- bClick 해야 box가 작동됨. -->
+
+    <script>
+        
+        // $("선택자").css("속성")  // 갖고있는 값을 가져옴. >> get
+
+        // document.querySelector(".box").style.backgroundColor
+        // 위에랑 아래랑 같은것.
+        // $(".box").css("background-color")
+
+        // $("선택자").css("속성","값")  // 값을 변경시키는 것.  >> set
+        // $("선택자").css({"속성":"값", "속성":"값"})
+        // $("선택자").addClass("")
+        // $("선택자").removeClass("")
+        // $("선택자").attr()
+
+        // console.log($(".box").attr("class"))  // 선택자가 갖고있는 값을 가져옴.
+        // $(".box").attr("class", "box actiov")
+
+        // obj.addEventListener("이벤트이름", 무명함수 function(){})
+
+        // $(".bClcik").on("click", function(){})
+        // $(".bClcik").click(function(){})  같은것.
+
+        $(".bClick").click(function(){
+            // $(".box").css("width","200px")
+            // $(".box").addClass("big")
+            // $(".box").attr("class","box big")
+            // $(".box").hide()
+            // $(".box").fadeOut()
+            $(".box").slideUp(4000,"linear",function(){  // .slideUP(시간,"이징??",함수)
+                console.log("up end")
+            })  
+
+        })
+
+        $(".show").click(function(){
+            // $(".box").show()
+            // $(".box").fadeIn()
+            $(".box").slideDown(1000,"linear") // 괄호안의 숫자는 시간을 나타냄 1000=1초
+        })
+    </script>
+</body>
+</html>
