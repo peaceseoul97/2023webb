@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        .box{
+            background-color: #f00;
+            width: 100px; height: 100px;
+            /* transition: 0.3s; 에니메이션 효과 */
+        }
+
+        .box.big{width: 200px;}
+    </style>
+</head>
+<body>
+    <button class="bClick">숨기기</button>
+    <button class="show">보이기</button>
+    <div class="box">
+
+    </div>
+
+    <script>
+
+        $(".bClick").click(function(){
+            $(".box").slideUp(2000,"linear",function(){
+                console.log("up end")
+            })  
+            // $(".box").hide()
+            // $(".box").fadeOut()
+
+
+            // $(".box").css("width","200px")   
+            // $(".box").addClass("big")  
+            // $(".box").attr("class","box big")
+            
+
+        })
+
+        $(".show").click(function(){
+            $(".box").slideDown(2000,"linear") // 괄호안의 숫자는 시간을 나타냄 1000=1초
+            // $(".box").show()
+            // $(".box").fadeIn()
+        })
+    </script>
+</body>
+</html>
