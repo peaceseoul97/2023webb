@@ -24,10 +24,10 @@
             1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, libero.
         </div>
         <div>
-            2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, libero.
+            안승용안승용
         </div>
         <div>
-            3. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, libero.
+            정용재 정용재
         </div>
         <div>
             4. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, libero.
@@ -36,13 +36,15 @@
 
     <script>
         $(".tab li").click(function(){
-            console.log($(this).index()) 
+            // console.log($(this).index()) 
             let i = $(this).index()
 
             $(".tab li").removeClass("active")
             $(".tab li").eq(i).addClass("active")
 
             $(".conWrap div").css("display","none")
+            // 애매하게 이해됨.
+            
             $(".conWrap div").eq(i).show()
         })
     </script>
