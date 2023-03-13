@@ -18,7 +18,6 @@
             border: 0 none;
             margin-bottom: 0;
         }
-        
         .bx-wrapper .bx-pager{
             bottom: 30px;
         }
@@ -59,19 +58,28 @@
             <li style="background-image:url(../images/pc01.jpg)" class="slideli">
                 <!-- <img src="../images/pc01.jpg" alt=""> -->
                 <div class="container txtWrap">
-                    
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
                 </div>
             </li>
             <li style="background-image:url(../images/pc02.jpg)" class="slideli">
                 <!-- <img src="../images/pc01.jpg" alt=""> -->
                 <div class="container txtWrap">
-                    
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
                 </div>
             </li>
             <li style="background-image:url(../images/pc03.jpg)" class="slideli">
                 <!-- <img src="../images/pc01.jpg" alt=""> -->
                 <div class="container txtWrap">
-                    
+                    <div class="tWrap">
+                        <h3>Lorem, ipsum dolor.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam, voluptas!</p>
+                    </div>
                 </div>
             </li>
             

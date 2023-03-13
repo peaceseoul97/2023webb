@@ -1,71 +1,144 @@
-.container{
+/* 헤더 */
+
+#container{
     width: 1200px;
     height: 800px;
     margin: 0 auto;
 }
 
-.header{
+header{
     display: flex;
     width: 100%;
     height: 100px;
-    margin: 0 auto;
     background: blue;
 }
 
 .logoLeft{
-    display: flex;
     float: left;
     width: 250px;
     margin-right: 50px;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-
 }
 
-.logoRight{
+nav{
     float: right;
     width: 900px;
+    height: 100%;
+    /* padding-top: 40px; */
 }
 
-.logoRight a{
-    display: flex;
-    justify-content: center;
-    align-items: end;
+.navWrap{
+    height: 60px;
+}
+
+.navWrap li{
     float: left;
-    width: calc( 100% / 4);
-    height: 100%;
+    width: 25%;
+    text-align: center;
+    line-height: 150px;
+}
+
+.navWrap li a{
+    display: block;
     color: white;
 }
 
-.imgSlide img{
-    width: 1200px;
-    height: 300px;
-    margin: 0 auto;
-    display: flex;
+.navWrap li a:hover{
+    background: black;
+    color: white;
 }
 
-.eWrap{
+/* 이미지 슬라이드 */
+
+#imgSlide{
+    width: 1200px;
+    height: 300px;
+    margin-bottom: 10px;
+}
+
+#imgSlide .slide1{
+    height: 300px;
+    margin: 0 auto;
+}
+
+#imgSlide .slide1 .slideli{
+    position: absolute;
+    bottom: 0;
     height: 300px;
 }
+
+/* 중간영역 */
+
+.eWrap{
+    width: 100%;
+    height: 300px;
+    
+}
+
 .eWrap .tabmenu{
+    float: left;
     margin: 0 auto;
-    width: 800px;
-    height: 100%;
-    background: pink;
+    width: 600px;
+    height: 300px;
+    background: white;
+    /* border: 1px solid #000;/ */
+    position: absolute;
+}
+
+.eWrap .tabmenu label{
+    display: inline-block;
+}
+
+.eWrap .tabmenu label:hover{
+    background: #ccc;
+    color:red;
+}
+
+.eWrap .tabmenu input{
+    display: none;
+}
+
+.eWrap .tabmenu .tebmenu2{
     float: left;
 }
 
-.eWrap .quicklink{
-    margin: 0 auto;
-    width: 400px;
-    height: 100%;
-    background: blue;
+.quicklink{
     float: right;
+    width: 600px;
+    height: 100%;
 }
 
-.ft{
+.quicklink ul{
+    /* border: 3px  solid #f00; */
+    /* padding: 0; */
+    overflow: hidden;
+}
+
+.quicklink ul li{
+    float: left;
+    width: 33%;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.quicklink ul li img{
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* 푸터 */
+
+.ft1{
     background: gold;
     margin: 0 auto;
     height: 100px;
+    width: 100%;
 }

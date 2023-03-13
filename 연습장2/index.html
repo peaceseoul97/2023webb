@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,46 +8,117 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="./css/jquery.bxslider.css">
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="header clearfix">
+    <div id="container">
+        <header>
             <div class="logoLeft">
-                Dream Jeju
+                <h1>Dream Jeju</h1>
             </div>
 
-            <div class="logoRight">
-                <a href="#">단체 여행</a>
-                <a href="#">맞춤 여행</a>
-                <a href="#">갤러리</a>
-                <a href="#">문의하기</a>
-            </div>
+            <nav>
+                <ul class="navWrap">
+                    <li><a href="#">단체 여행</a></li>
+                    <li><a href="#">맞춤 여행</a></li>
+                    <li><a href="#">갤러리</a></li>
+                    <li><a href="#">문의하기</a></li>   
+                </ul>
+            </nav>
+
+        </header>
+
+        <div id="imgSlide">
+            <ul class="slide1">
+                <li style="background-image: url(images/제주도4.jpg)" class="slideli"></li>
+                <li style="background-image: url(images/제주도2.jpg)" class="slideli"></li>
+                <li style="background-image: url(images/제주도3.jpg)" class="slideli"></li>
+            </ul>
         </div>
 
-        <div class="imgSlide">
-            <img src="images/visual.jpg" alt="">
-            <img src="images/제주도2.jpg" alt="">///
-        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/jquery.bxslider.js"></script>
+        <script>
+            $(".slide1").bxSlider({
+                auto:true,
+                controls:false,
+                pager:false,
+            })
+        </script>
 
         <div class="eWrap">
             <div class="tabmenu">
-                <button class="btn1">공지사항</button>
-                <button class="btn2">갤러리</button>
+                <input type="radio" class="btn1" name="tabs">
+                <label for="tab1" class="activ">공지사항</label>
+                <input type="radio" class="btn1" name="tabs">
+                <label for="tab1">갤러리</label>    
+                
+                <!-- <button class="btn1">공지사항</button>
+                <button class="btn2">갤러리</button> -->
 
-                <img src="../images/apple.png" alt="">
-                <img src="../images/banana.png" alt="">
-                <img src="../images/car.png" alt="">
+                <div class="tabmenu1">
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                    </ul>
+                </div>
+
+                <div class="tabmenu2">
+                    <ul>
+                        <li><img src="../images/apple.png" alt=""></li>
+                        <li><img src="../images/banana.png" alt=""></li>
+                        <li><img src="../images/car.png" alt=""></li>
+                        <li><img src="../images/apple.png" alt=""></li>
+                        <li><img src="../images/banana.png" alt=""></li>
+                        <li><img src="../images/car.png" alt=""></li>
+                    </ul>
+                </div>
             </div>
-            
+
+            <script>
+                $(".tabmenu label").click(function(){
+                    let i = $(this).index()
+                    $(".tabmenu label").removeClass("active");
+                    $(".tabmenu label").eq(i).addClass("active")
+                })
+            </script>
+
             <div class="quicklink">
-                ㅁㄴㅇㄹㅁㅇㄹㄴ
+                <ul>
+                    <li>
+                        <img src="../images/img1.jpg" alt="">
+                        <p>평화기행</p>
+                    </li>
+                    <li>
+                        <img src="../images/img2.jpg" alt="">
+                        <p>힐링 워크샵</p>
+                    </li>
+                    <li>
+                        <img src="../images/img3.jpg" alt="">
+                        <p>문의하기</p>
+                    </li>
+                </ul>
                 <!-- <img src="../../2023todo/포리/pori1.jpg" alt=""> -->
             </div>
         </div>
 
-        <footer class="ft">
-            asdfadfasd
+        <footer class="ft1">
+            <ul>
+                <li><a href="#">회사 소개</a></li>
+                <li><a href="#">개인정보처리방침</a></li>
+                <li><a href="#">여행 약관</a></li>
+                <li><a href="#">사이트맵</a></li>
+            </ul>
+            <div class="ft2">
+
+            </div>
         </footer>
     </div>
 </body>
+
 </html>
