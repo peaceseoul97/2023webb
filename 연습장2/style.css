@@ -10,7 +10,6 @@
     height: 100px;
     margin: 0 auto;
     background: blue;
-    color: white;
 }
 
 .logoLeft{
@@ -32,7 +31,11 @@
 .logoRight a{
     display: flex;
     justify-content: center;
-    
+    align-items: end;
+    float: left;
+    width: calc( 100% / 4);
+    height: 100%;
+    color: white;
 }
 
 .imgSlide img{
